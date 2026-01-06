@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>DAITANO Social</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- AUTH -->
+<div class="auth" id="authUI">
+  <div class="auth-box" id="signupUI">
+    <h2>Sign Up</h2>
+    <input id="suU" placeholder="Username">
+    <input id="suP" placeholder="Password" type="password">
+    <button onclick="signup()">Create Account</button>
+    <div class="toggle" onclick="swap()">Have account? Sign In</div>
+  </div>
+
+  <div class="auth-box" id="loginUI" style="display:none">
+    <h2>Sign In</h2>
+    <input id="lgU" placeholder="Username">
+    <input id="lgP" placeholder="Password" type="password">
+    <button onclick="login()">Login</button>
+    <div class="toggle" onclick="swap()">No account? Sign Up</div>
+  </div>
+</div>
+
+<!-- INBOX -->
+<div class="page" id="inbox">
+<header>
+  <h3>Inbox</h3>
+  <div>
+    <button onclick="go('notify')">Requests</button>
+    <button onclick="logout()">Logout</button>
+  </div>
+</header>
+<div id="friends"></div>
+</div>
+
+<!-- NOTIFICATIONS -->
+<div class="page" id="notify">
+<header>
+  <h3>Friend Requests</h3>
+  <button onclick="go('inbox')">Back</button>
+</header>
+<div id="reqs"></div>
+</div>
+
+<!-- CHAT -->
+<div class="page" id="chat">
+<header>
+  <h3 id="chatWith">Chat</h3>
+  <button onclick="go('inbox')">Close</button>
+</header>
+<div id="chatBox"></div>
+<div class="chat-input">
+  <input id="msgIn" placeholder="Message...">
+  <button onclick="send()">Send</button>
+</div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
